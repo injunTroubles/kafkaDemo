@@ -12,7 +12,12 @@ It uses Gradle for build and dependency management.
 * Entry point that creates and produces Command Messages for downstream processing
 * Params: `repeatTimes` - default value of 1
 * Request Pattern: `curl --location --request POST 'http://localhost:8080/messages?repeatTimes=1' \
-  --data-raw ''`
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": "25"
+  }'`
 * Response Pattern: 200 OK
 
 ## Kafka Consumer

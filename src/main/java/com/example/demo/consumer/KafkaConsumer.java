@@ -32,7 +32,7 @@ public class KafkaConsumer {
             DATABASE OPERATIONS, API INTERACTIONS, ETC...
         */
 
-        MessageEnvelope outboundMessage = new MessageEnvelope(MessageType.EVENT, MessageName.MESSAGE_PROCESSED, messageEnvelope.getPayload());
+        MessageEnvelope outboundMessage = new MessageEnvelope(MessageType.EVENT, MessageName.PERSON_PROCESSED, messageEnvelope.getPayload());
 
         /*
             ONCE WORK IS COMPLETE CAN SEND RESULT TO DOMAIN AND/OR PUBLIC TOPIC(S) IN CASE OTHER OPERATIONS BEYOND

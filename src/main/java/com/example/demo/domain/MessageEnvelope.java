@@ -6,7 +6,7 @@ public class MessageEnvelope {
     public MessageEnvelope() {
     }
 
-    public MessageEnvelope(MessageType type, MessageName name, String payload) {
+    public MessageEnvelope(MessageType type, MessageName name, Person payload) {
         this.type = type;
         this.name = name;
         this.payload = payload;
@@ -14,11 +14,7 @@ public class MessageEnvelope {
 
     MessageType type;
     MessageName name;
-    /*
-        FOR SIMPLICITY, THE PAYLOAD IS DEFINED AS A STRING.  THIS COULD BE DEFINED AS A GENERIC OBJECT SO IT CAN TRANSPORT
-        MORE COMPLEX STRUCTURES. TYPICALLY, THIS ACCOMPLISHED USING JsonNode or Object data types.
-     */
-    String payload;
+    Person payload;
 
     public MessageType getType() {
         return type;
@@ -36,11 +32,11 @@ public class MessageEnvelope {
         this.name = name;
     }
 
-    public String getPayload() {
+    public Person getPayload() {
         return payload;
     }
 
-    public void setPayload(String payload) {
+    public void setPayload(Person payload) {
         this.payload = payload;
     }
 }
