@@ -18,7 +18,8 @@ It uses Gradle for build and dependency management.
   "lastName": "Smith",
   "age": "25"
   }'`
-* Response Pattern: 200 OK
+* Response Pattern: string value representing a correlationId
+* Response Status: 200 OK
 
 ## Kafka Consumer
 * Central listener configuration that ties processing functionality to message topics

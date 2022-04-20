@@ -32,7 +32,7 @@ public class KafkaConsumer {
             DATABASE OPERATIONS, API INTERACTIONS, ETC...
         */
 
-        MessageEnvelope outboundMessage = new MessageEnvelope(MessageType.EVENT, MessageName.PERSON_PROCESSED, messageEnvelope.getPayload());
+        MessageEnvelope outboundMessage = new MessageEnvelope(MessageType.EVENT, MessageName.PERSON_PROCESSED, messageEnvelope.getCorrelationId(), messageEnvelope.getPayload());
 
         /*
             ONCE WORK IS COMPLETE CAN SEND RESULT TO DOMAIN AND/OR PUBLIC TOPIC(S) IN CASE OTHER OPERATIONS BEYOND
@@ -48,7 +48,6 @@ public class KafkaConsumer {
         switch (consumerRecord.topic()) {
             case "demo-command":
                 template.send("demo-domain", outboundMessage);
-                template.send("demo-public", outboundMessage);
                 break;
             default:
                 template.send("demo-public", outboundMessage);
