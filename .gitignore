@@ -1,0 +1,12 @@
+build
+out
+.gradle
+.idea
+.terraform
+.plan
+*local*.properties
+*local.properties
+.gradle-home
+tmp
+*.iml
+.DS_Store
